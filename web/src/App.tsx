@@ -34,7 +34,7 @@ function App() {
       console.error('Error:', error)
       setMessages(prev => [...prev, { 
         role: 'assistant', 
-        content: 'Maafi chaahte hain, jaani... kuch gadbad ho gayi. Dobara koshish karo.' 
+        content: 'Maafi chaahte hain, jaani... kuch gadbad ho gayi. Zaara Backend check kroo..' 
       }])
     } finally {
       setIsLoading(false)
