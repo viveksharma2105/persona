@@ -50,7 +50,7 @@ function App() {
       <Header isDark={isDark} onToggleTheme={() => setIsDark(prev => !prev)} />
 
       <main className="max-w-6xl mx-auto px-6 py-8">
-        <div className={`backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border-2 ${
+        <div className={`backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border-2 animate-scale-in ${
           isDark ? 'bg-gray-800/90 border-gray-700' : 'bg-white/80 border-amber-200'
         }`}>
           <div className="h-[500px] overflow-y-auto p-6 space-y-4">
@@ -68,7 +68,7 @@ function App() {
           <ChatInput onSendMessage={handleSendMessage} isLoading={isLoading} isDark={isDark} />
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-8 text-center animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
           <p className={`text-xl italic font-semibold ${isDark ? 'text-amber-500' : 'text-amber-900'}`}>
             "Aaj ki duniya mein sharafat ka faayda sirf bewakoof uthate hain."
           </p>

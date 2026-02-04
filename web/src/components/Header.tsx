@@ -15,7 +15,7 @@ export default function Header({ isDark, onToggleTheme }: HeaderProps) {
       <div className="max-w-6xl mx-auto px-6 py-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-amber-500 shadow-xl">
+            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-amber-500 shadow-xl hover:border-amber-400 transition-all hover:scale-110 animate-pulse-slow">
               <img 
                 src={raajKumarLogo} 
                 alt="Raaj Kumar"
@@ -33,7 +33,7 @@ export default function Header({ isDark, onToggleTheme }: HeaderProps) {
           {/* Theme Toggle Button */}
           <button
             onClick={onToggleTheme}
-            className={`p-3 rounded-full transition-all ${
+            className={`p-3 rounded-full transition-all transform hover:scale-110 hover:rotate-12 active:scale-95 ${
               isDark 
                 ? 'bg-gray-800 hover:bg-gray-700 text-amber-500' 
                 : 'bg-amber-100 hover:bg-amber-200 text-amber-900'
