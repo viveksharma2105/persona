@@ -28,6 +28,18 @@ body {
   background: #f59e0b;
 }
 
+/* Hide scrollbar on mobile devices */
+@media (max-width: 640px) {
+  .overflow-y-auto::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .overflow-y-auto {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 /* Animation Keyframes */
 @keyframes fadeIn {
   from {
