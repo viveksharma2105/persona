@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 from openai import OpenAI
 from prompt import SYSTEM_PROMPT
+import os
 
 load_dotenv()
 
@@ -18,7 +19,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-client = OpenAI()
+client = OpenAI(
+    api_key=os.getenv("GOOGLE_GEMINI_API_KEY"),
+    base_url="https://generativelanguage.googleapis.com/v1beta/"
+)
+    
 
 class ChatRequest(BaseModel):
     message: str
@@ -44,7 +49,7 @@ def chat(request: ChatRequest):
     
     try:
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gemini-2.5-flash",
             messages=messages
         )
         
